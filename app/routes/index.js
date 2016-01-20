@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
+    
     this.store.push({
       data: {
         id: 1,
@@ -11,6 +12,7 @@ export default Ember.Route.extend({
         }
       }
     });
+    this.store.serializerFor('application');
     return this.store.peekRecord('post', 1);
   }
 });
